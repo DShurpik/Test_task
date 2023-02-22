@@ -1,4 +1,4 @@
-package requres.test;
+package request.test;
 
 import BasePages.BaseTest;
 import com.google.gson.JsonObject;
@@ -8,7 +8,7 @@ import io.restassured.response.Response;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import requres.api.Players;
+import request.api.Players;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,9 @@ public class End_to_end_tests extends BaseTest {
 
     @Test(description = "create user valid data", priority = 1)
     public void test1() {
-        JsonObject jsonObject = new JsonParser().parse(getJson("user")).getAsJsonObject();
+        JsonObject jsonObject = new JsonParser()
+                .parse(getJson("user_for_end_to_end_test"))
+                .getAsJsonObject();
 
         Response response = given().get("/create/" + getEDITOR() +
                 "?age=" + jsonObject.get("age").getAsString() +

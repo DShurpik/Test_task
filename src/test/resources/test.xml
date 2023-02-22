@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="test" thread-count= "3" parallel="tests">
+
+    <test name="API test">
+
+        <classes>
+            <class name="request.test.Create_user"/>
+            <class name="request.test.Delete_user"/>
+            <class name="request.test.End_to_end_tests"/>
+            <class name="request.test.Get_player_info_by_id"/>
+        </classes>
+    </test>
+
+</suite>

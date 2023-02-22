@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static Utils.Config.BASE_URI;
 import static io.restassured.RestAssured.baseURI;
 
 public abstract class BaseTest {
@@ -21,7 +22,7 @@ public abstract class BaseTest {
 
     @BeforeTest
     public void precondition() {
-        baseURI = "http://3.68.165.45/player";
+        baseURI = BASE_URI;
         RestAssured.defaultParser = Parser.JSON;
         disableWarning();
     }

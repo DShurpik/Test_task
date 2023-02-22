@@ -1,4 +1,4 @@
-package requres.api;
+package request.api;
 
 public class Players {
     private int id;

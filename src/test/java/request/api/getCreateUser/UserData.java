@@ -1,4 +1,4 @@
-package requres.api.getCreateUser;
+package request.api.getCreateUser;
 
 public class UserData {
     private String age;
