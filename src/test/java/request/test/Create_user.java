@@ -11,7 +11,6 @@ public class Create_user extends BaseTest {
 
     @Test(description = "create user valid data") //DONE
     public void test1() {
-
         UserData userData = new UserData(){{
             setAge("25");
             setGender("male");
@@ -20,6 +19,7 @@ public class Create_user extends BaseTest {
             setRole("admin");
             setScreenName("damavik1");
         }};
+
 
         Response response = given().get("/create/" + getEDITOR() +
                 "?age=" + userData.getAge() +

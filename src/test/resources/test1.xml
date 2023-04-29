@@ -5,8 +5,8 @@
 
     <test name="test">
         <classes>
-            <class name="Page1"></class>
             <class name="Page2"></class>
+            <class name="Page3"></class>
         </classes>
     </test>
 

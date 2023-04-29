@@ -14,7 +14,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <aspectj.version>1.9.19</aspectj.version>
-        <suiteXmlFile/>
+
+
+        <suiteXmlFile></suiteXmlFile>
 
     </properties>
 
@@ -87,6 +89,7 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -100,7 +103,8 @@
                         <suiteXmlFile>src/test/resources/${suiteXmlFile}.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.9.19/aspectjweaver-1.9.19.jar
+                        -Xmx256m
                     </argLine>
                     <systemProperties>
                         <property>
@@ -109,20 +113,20 @@
                             <value>${project.build.directory}/allure-results</value>
                         </property>
                     </systemProperties>
-
-                    <testFailureIgnore>true</testFailureIgnore>
-
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>1.9.6</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.10.0</version>
-                <configuration>
-                    <reportVersion>2.20.1</reportVersion>
-                </configuration>
             </plugin>
-
         </plugins>
     </build>
 
